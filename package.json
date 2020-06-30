@@ -1,6 +1,6 @@
 {
-  "name": "@rehooks/local-storage",
-  "version": "2.4.0",
+  "name": "@actioncy/local-storage",
+  "version": "2.5.1",
   "description": "React hook for local-storage",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -15,10 +15,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rehooks/local-storage.git"
+    "url": "https://github.com/actioncy/local-storage.git"
   },
-  "author": "Amit Solanki <amit.fash@gmail.com>",
+  "author": "Gerrit <gerrit@actioncy.io>",
   "contributors": [
+    "Amit Solanki",
     "Joseph Harrison-Lim"
   ],
   "license": "MIT",
