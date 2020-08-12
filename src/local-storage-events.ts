@@ -4,6 +4,24 @@ interface KVP<K, V> {
     value: V
 }
 
+/**
+ * CustomEvent polyfill derived from: https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
+ */
+(() => {
+    if (typeof window.CustomEvent === "function")
+        return;
+
+    function CustomEvent<T>(
+        typeArg: string,
+        params: CustomEventInit<T> = { bubbles: false, cancelable: false }
+    ): CustomEvent<T> {
+        const evt = document.createEvent('CustomEvent');
+        evt.initCustomEvent(typeArg, params?.bubbles ?? false, params?.cancelable ?? false, params?.detail);
+        return evt;
+    }
+
+    window.CustomEvent = CustomEvent as unknown as typeof window.CustomEvent;
+})();
 
 /**
  * Used for creating new events for LocalStorage. This enables us to
